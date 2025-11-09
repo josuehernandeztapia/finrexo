@@ -117,7 +117,7 @@
                         <li><strong>Frecuencias Ineficientes:</strong> Sin datos reales de demanda, no podemos ajustar los <strong>headways</strong> (tiempo entre buses), resultando en buses vacíos o buses saturados.</li>
                         <li><strong>Auditorías Manuales:</strong> Procesos lentos, costosos y propensos a error humano para validar ingresos o subsidios.</li>
                         <li><strong>Experiencia de Usuario Deficiente:</strong> Pasajeros sin visibilidad de cuándo llegará el bus o si vendrá lleno, generando frustración.</li>
-                        <li><strong>Costos Ocultos:</strong> Mantenemos un GPS externo (\$180/mes) redundante y una barra IR ($22,100 CAPEX) que ofrece datos de baja calidad.</li>
+                        <li><strong>Costos Ocultos:</strong> Mantenemos un GPS externo (\$180/mes) redundante y una barra IR ($22,100 CAPEX) que ofrece datos de baja calidad. (Renta GPS vigente: $180/mes; equipo/instalación externos encarecen el CAPEX).</li>
                     </ul>
                 </div>
             </section>
@@ -177,8 +177,9 @@
                         <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
                             <h3 class="text-2xl font-bold text-blue-700 mb-3">Para Finanzas (ROI)</h3>
                             <ul class="list-disc list-outside space-y-2 text-gray-600 pl-5">
-                                <li><strong>Revenue Assurance:</strong> Cuadratura de abordajes (99% precisión) vs. boletos o subsidios.</li>
-                                <li><strong>Eliminación de Costos:</strong> Adiós a auditorías manuales y renta de GPS externo.</li>
+                                <li><strong>Revenue Assurance:</strong> Cuadratura de abordajes (<strong>≥98–99% precisión en ascenso 3D</strong>) vs. boletos o subsidios.</li>
+                                <li><strong>Reconversión de Costos:</strong> Se elimina equipo GPS (CAPEX/mantto.); OPEX migra a datos IoT (<strong>~+$5/mes</strong>).</li>
+                                <li>Adiós a auditorías manuales.</li>
                             </ul>
                         </div>
                         <!-- Card 2 -->
@@ -199,6 +200,9 @@
                             </ul>
                         </div>
                     </div>
+                    <p class="text-base text-center text-gray-600 mt-8">
+                        *El valor del proyecto no depende del OPEX: está en la precisión 3D, la métrica `inside` y la reducción de `dwell time` (8–15 s/parada).*
+                    </p>
                 </div>
             </section>
 
@@ -223,32 +227,35 @@
                                 <tr>
                                     <td class="font-semibold">CAPEX (Por Bus)</td>
                                     <td class="font-bold text-red-600 text-lg">\$22,100 MXN</td>
-                                    <td class="font-bold text-blue-600 text-lg">\$26,015.60 MXN</td>
+                                    <td class="font-bold text-blue-600 text-lg">\$23,915.60 MXN</td>
                                 </tr>
+                                <!-- Desglose de CAPEX -->
                                 <tr class="bg-gray-50">
-                                    <td class="pl-12 text-gray-600">$17,000 (Barras)</td>
-                                    <td class="pl-12 text-gray-600" rowspan="3">$26,015.60 (Kit Híbrido 3D+2D)</td>
-                                </tr>
-                                <tr class="bg-gray-50">
-                                    <td class="pl-12 text-gray-600">$3,000 (Inst. Barras)</td>
-                                </tr>
-                                <tr class="bg-gray-50">
-                                    <td class="pl-12 text-gray-600">$2,100 (Inst. GPS Externo)</td>
+                                    <td class="pl-12 text-gray-600 text-sm">
+                                        $17,000 (Barras)<br>
+                                        $3,000 (Inst. Barras)<br>
+                                        $2,100 (Equipo GPS Externo)
+                                    </td>
+                                    <td class="pl-12 text-gray-600 text-sm">
+                                        $29,015.60 (Bruto)<br>
+                                        <span class="text-green-600">− $5,100 (Ahorro GPS)</span><br>
+                                        <span class="font-semibold">= $23,915.60 (Neto)</span>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="font-semibold">OPEX (Mensual/Bus)</td>
                                     <td class="font-bold text-gray-700 text-lg">\$180 MXN (Renta GPS)</td>
-                                    <td class="font-bold text-gray-700 text-lg">\~\$185 MXN (SIM IoT Datos)</td>
+                                    <td class="font-bold text-gray-700 text-lg">≈ \$185 MXN (SIM IoT Datos)</td>
                                 </tr>
                                 <tr>
                                     <td class="font-semibold">Diferencia CAPEX</td>
                                     <td></td>
-                                    <td class="font-bold text-red-600 text-lg">+ \$3,915.60 MXN</td>
+                                    <td class="font-bold text-red-600 text-lg">+ \$1,816 MXN</td>
                                 </tr>
                                 <tr>
                                     <td class="font-semibold">Diferencia OPEX</td>
                                     <td></td>
-                                    <td class="font-bold text-red-600 text-lg">~ +$5 MXN / mes (Costo)</td>
+                                    <td class="font-bold text-red-600 text-lg">≈ +$5 MXN / mes (Casi neutro)</td>
                                 </tr>
                                 <tr>
                                     <td class="font-semibold">Payback</td>
@@ -259,7 +266,10 @@
                         </table>
                     </div>
                     <p class="text-xl text-center font-semibold text-gray-900 mt-8 bg-blue-100 border-l-4 border-blue-500 p-6 rounded-lg">
-                        Conclusión: La inversión inicial es \$3,916 MXN más alta, <br><span class="text-blue-700">pero esos \$3,916 compran todo el valor del proyecto.</span>
+                        Conclusión: La inversión inicial es \$1,816 MXN más alta, <br><span class="text-blue-700">pero esos \$1,816 compran toda la inteligencia del proyecto.</span>
+                    </p>
+                    <p class="text-sm text-gray-500 mt-2">
+                      *Todos los montos SIN IVA. PoE A ≈ US$79 → ~$1,462 @ TC 18.5. El valor no está en OPEX sino en precisión 3D, métrica <code>inside</code> y <em>dwell</em> −8–15 s/parada.
                     </p>
                 </div>
             </section>
@@ -269,16 +279,16 @@
                 <div class="slide-content">
                     <span class="text-sm font-semibold text-blue-600 uppercase">Valor</span>
                     <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
-                        5. Benchmark de Valor: ¿Qué compran esos \$3,916 MXN?
+                        5. Benchmark de Valor: ¿Qué compran esos \$1,816 MXN?
                     </h2>
-                    <p class="text-xl text-gray-700 mb-6">Esos \$3,916 son la diferencia entre un "contador tonto" y una "plataforma de inteligencia".</p>
+                    <p class="text-xl text-gray-700 mb-6">Esos \$1,816 son la diferencia entre un "contador tonto" y una "plataforma de inteligencia".</p>
                     <div class="overflow-x-auto">
                         <table>
                             <thead>
                                 <tr>
                                     <th>Funcionalidad</th>
-                                    <th>Barras IR (\$21k)</th>
-                                    <th>Plataforma 3D+2D (\$26k)</th>
+                                    <th>Barras IR (\$22.1k)</th>
+                                    <th>Plataforma 3D+2D (\$23.9k NETO)</th>
                                     <th>Valor de Negocio</th>
                                 </tr>
                             </thead>
@@ -356,7 +366,7 @@
                                     <td>\$30k - $38k</td>
                                     <td>98-99%</td>
                                     <td>Completo</td>
-                                    <td>Alternativa viable, costo similar.</td>
+                                    <td>Alternativa viable. (Asegurar MDVR ≥2 IP; algunos retail listan 1 IP y no sirven).</td>
                                 </tr>
                                 <tr>
                                     <td class="font-medium">Hanwha / Axis (NDAA)</td>
@@ -377,6 +387,9 @@
                     </div>
                     <p class="text-xl text-center font-semibold text-gray-900 mt-8 bg-gray-100 p-6 rounded-lg">
                         Conclusión: Dahua ofrece el <span class="text-blue-600"><strong>stack completo</strong></span> (MDVR+GPS+Cámaras) con la mejor relación precio-tecnología-precisión del mercado.
+                    </p>
+                    <p class="text-xs text-gray-500 mt-2">
+                      *Precios referenciales Nov-2025. Requiere MDVR ≥2 IP en Hik para 2 puertas. NDAA: ruta Hanwha/Axis + MDVR 3ros o Transit 3D (Dilax/Xovis).
                     </p>
                 </div>
             </section>
@@ -421,28 +434,28 @@
                                 </tr>
                                 <tr class="bg-gray-100">
                                     <td class="font-semibold">Subtotal por Bus</td>
-                                    <td class="font-bold text-lg">\$29,015.77</td>
+                                    <td class="font-bold text-lg">\$29,015.60</td>
                                     <td></td>
                                 </tr>
                                 <tr class="bg-gray-100">
                                     <td class="font-semibold">Ahorro (No Instalar GPS)</td>
-                                    <td class="font-bold text-green-600 text-lg">(\$3,000.00)</td>
-                                    <td class="font-bold text-green-600 text-lg">(\$60,000.00)</td>
+                                    <td class="font-bold text-green-600 text-lg">(\$5,100.00)</td>
+                                    <td class="font-bold text-green-600 text-lg">(\$102,000.00)</td>
                                 </tr>
                                 <tr class="bg-blue-50">
                                     <td class="font-bold text-blue-800 text-lg">CAPEX NETO POR BUS</td>
-                                    <td class="font-extrabold text-blue-800 text-xl">\$26,015.77</td>
+                                    <td class="font-extrabold text-blue-800 text-xl">\$23,915.60</td>
                                     <td></td>
                                 </tr>
                                 <tr class="bg-blue-100">
                                     <td class="font-bold text-blue-800 text-lg">TOTAL INVERSIÓN (20 Buses)</td>
                                     <td></td>
-                                    <td class="font-extrabold text-blue-800 text-xl">\$520,315.40 (Sin IVA)</td>
+                                    <td class="font-extrabold text-blue-800 text-xl">\$478,312.00 (Sin IVA)</td>
                                 </tr>
                                 <tr>
                                     <td class="font-semibold">Infraestructura On-Prem</td>
                                     <td></td>
-                                    <td class="font-medium">\$88k - $155k (Una vez)</td>
+                                    <td class="font-medium">\$13.5k - $17.6k (Una vez)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -469,10 +482,10 @@
                                 <tr><td>MDVR (DHI-MXVR4104-GFWI)</td><td>\$10,483.83</td></tr>
                                 <tr><td>SSD 2TB (Samsung 870 EVO)</td><td>\$3,569.00</td></tr>
                                 <tr><td>Materiales Base de Instalación</td><td>\$1,500.00</td></tr>
-                                <tr class="bg-green-50"><td>Ahorro (No Instalar GPS Externo)</td><td class="font-medium text-green-600">(\$3,000.00)</td></tr>
+                                <tr class="bg-green-50"><td>Ahorro (No Instalar GPS Externo)</td><td class="font-medium text-green-600">(\$5,100.00)</td></tr>
                                 <tr class="bg-gray-100">
                                     <td class="font-bold">Subtotal Fijo (Neto)</td>
-                                    <td class="font-bold text-lg">\$12,552.83</td>
+                                    <td class="font-bold text-lg">\$10,452.83</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -513,21 +526,22 @@
                             <tbody>
                                 <tr>
                                     <td class="font-medium">A: 2D + 2D</td>
-                                    <td>\$12,552.83 + \$10,600.00</td>
-                                    <td class="font-bold text-lg">\$23,152.83</td>
+                                    <td>\$10,452.83 + \$10,600.00</td>
+                                    <td class="font-bold text-lg">\$21,052.83</td>
                                 </tr>
                                 <tr class="bg-blue-100">
                                     <td class="font-extrabold text-blue-800">B: 3D + 2D (Recomendado)</td>
-                                    <td class="font-semibold text-blue-800">\$12,552.83 + \$13,462.77</td>
-                                    <td class="font-extrabold text-blue-800 text-xl">\$26,015.60</td>
+                                    <td class="font-semibold text-blue-800">\$10,452.83 + \$13,462.77</td>
+                                    <td class="font-extrabold text-blue-800 text-xl">\$23,915.60</td>
                                 </tr>
                                 <tr>
                                     <td class="font-medium">C: 3D + 3D</td>
-                                    <td>\$12,552.83 + \$16,325.54</td>
-                                    <td class="font-bold text-lg">\$28,878.37</td>
+                                    <td>\$10,452.83 + \$16,325.54</td>
+                                    <td class="font-bold text-lg">\$26,778.37</td>
                                 </tr>
                             </tbody>
                         </table>
+                        <p class="text-sm text-gray-500 mt-4">*Todos los montos SIN IVA. PoE A (Switch) ≈ US$79 → ~$1,462 @ TC 18.5.</p>
                     </div>
                 </div>
             </section>
@@ -554,25 +568,26 @@
                                 <tr>
                                     <td class="font-semibold">Costo por Bus / Mes</td>
                                     <td class="text-lg text-gray-700">\$180 MXN <span class="text-sm text-gray-500">(Renta GPS)</span></td>
-                                    <td class="text-lg text-gray-700 font-semibold">\~\$185 MXN <span class="text-sm text-gray-500">(SIM Hologram \~\$10 USD)</span></td>
+                                    <td class="text-lg text-gray-700 font-semibold">≈ \$185 MXN <span class="text-sm text-gray-500">(SIM Hologram \~$10 USD)</span></td>
                                 </tr>
                                 <tr>
                                     <td class="font-semibold">Costo Flota 20 / Mes</td>
                                     <td class="text-lg text-gray-700">\$3,600 MXN</td>
-                                    <td class="text-lg text-gray-700 font-semibold">\~\$3,700 MXN</td>
+                                    <td class="text-lg text-gray-700 font-semibold">≈ \$3,700 MXN</td>
                                 </tr>
                                 <tr>
                                     <td class="font-semibold">Costo Flota 20 / Año</td>
                                     <td class="text-lg text-gray-700">\$43,200 MXN</td>
-                                    <td class="text-lg text-gray-700 font-semibold">\~\$44,400 MXN</td>
+                                    <td class="text-lg text-gray-700 font-semibold">≈ \$44,400 MXN</td>
                                 </tr>
                                 <tr class="bg-red-100">
                                     <td class="font-bold text-red-800 text-lg">DIFERENCIA OPEX ANUAL</td>
                                     <td></td>
-                                    <td class="font-extrabold text-red-800 text-xl">~ +$1,200 MXN (Costo)</td>
+                                    <td class="font-extrabold text-red-800 text-xl">≈ +$1,200 MXN (Costo)</td>
                                 </tr>
                             </tbody>
                         </table>
+                        <p class="text-base text-gray-600 mt-4">*El valor central no está en OPEX sino en: precisión 3D, métrica `inside` y `dwell time` −8–15 s/parada (más vueltas o menos unidades para la misma oferta).</p>
                     </div>
                 </div>
             </section>
@@ -796,7 +811,7 @@
                             <li>
                                 <strong>Suscribirse:</strong> Conectarse vía HTTP a la cámara (IP local) usando el <strong>endpoint</strong> de <strong>long-polling</strong>:
                                 <pre class="bg-gray-100 p-3 rounded-md mt-2 text-sm text-gray-800"><code>GET /cgi-bin/videoStatServer.cgi?action=attach&channel=1&heartbeat=5</code></pre>
-                                <span class="text-sm text-red-600 font-medium"><strong>(No usar `getSummary`)</strong></span>
+                                <span class="text-sm text-red-600 font-medium"><strong>(No usar `getSummary` para ingestión continua, solo `attach`)</strong></span>
                             </li>
                             <li><strong>Parsear:</strong> Interpretar la respuesta (XML o JSON) para extraer `in`, `out` e `inside`.</li>
                             <li><strong>Enriquecer:</strong> Añadir metadata (bus_id, route_id, door_id, timestamp).</li>
@@ -1082,6 +1097,7 @@
                                 <li class="flex items-center"><span class="mr-2">☐</span> SIM 4G insertada y con conexión (LED OK).</li>
                                 <li class="flex items-center"><span class="mr-2">☐</span> Módulo GNSS con señal (LED OK).</li>
                                 <li class="flex items-center"><span class="mr-2">☐</span> Configurar grabación H.265 en SSD.</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Configurar zona horaria y NTP (America/Mexico_City) en MDVR y cámaras.</li>
                                 <li class="flex items-center"><span class="mr-2">☐</span> Configurar JT808 apuntando a IP/Puerto del <strong>backend</strong>.</li>
                             </ul>
                         </div>
