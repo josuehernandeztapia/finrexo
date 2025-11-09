@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deck - Plataforma de Movilidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Estilo para las tablas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        thead th {
+            background-color: #f9fafb;
+            color: #374151;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        tbody tr:hover {
+            background-color: #f3f4f6;
+        }
+        /* Estilo para slides */
+        .slide {
+            min-height: 100vh;
+            width: 100%;
+            padding: 6rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .slide-content {
+            max-width: 64rem; /* max-w-6xl */
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+        /* Color de fondo alterno */
+        .slide:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .slide:nth-child(odd) {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- Navegación Fija -->
+    <nav class="fixed top-0 left-0 right-0 bg-white bg-opacity-90 backdrop-blur-md shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-bold text-blue-700">Plataforma de Movilidad</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#parte1" class="font-medium text-gray-600 hover:text-blue-600 transition duration-150">Visión Ejecutiva</a>
+                    <a href="#parte2" class="font-medium text-gray-600 hover:text-blue-600 transition duration-150">Deep-Dive Técnico</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor Principal de Slides -->
+    <main>
+
+        <!-- Slide 0: Título -->
+        <section class="slide bg-gray-900 text-white" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x1080/000000/FFFFFF?text=BUS'); background-size: cover; background-position: center;">
+            <div class="slide-content text-center">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4">
+                    Plataforma de Movilidad Inteligente
+                </h1>
+                <p class="text-2xl md:text-3xl font-light text-gray-300">
+                    Blueprint Ejecutivo, Financiero y Técnico
+                </p>
+            </div>
+        </section>
+
+        <!-- PARTE 1: VISIÓN EJECUTIVA -->
+        <div id="parte1">
+
+            <!-- Slide 1: El Problema Estratégico -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">El Problema</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        1. El Problema Estratégico
+                    </h2>
+                    <ul class="list-disc list-outside space-y-4 text-lg md:text-xl text-gray-700 pl-5">
+                        <li><strong>Conteos No Confiables:</strong> Métodos manuales o barras Infrarrojas (IR) con errores del 10-15% (o más en horas pico), generando datos inutilizables.</li>
+                        <li><strong>Frecuencias Ineficientes:</strong> Sin datos reales de demanda, no podemos ajustar los <strong>headways</strong> (tiempo entre buses), resultando en buses vacíos o buses saturados.</li>
+                        <li><strong>Auditorías Manuales:</strong> Procesos lentos, costosos y propensos a error humano para validar ingresos o subsidios.</li>
+                        <li><strong>Experiencia de Usuario Deficiente:</strong> Pasajeros sin visibilidad de cuándo llegará el bus o si vendrá lleno, generando frustración.</li>
+                        <li><strong>Costos Ocultos:</strong> Mantenemos un GPS externo (\$180/mes) redundante y una barra IR ($22,100 CAPEX) que ofrece datos de baja calidad.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 2: La Solución -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">La Solución</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        2. La Solución: Plataforma de Movilidad Inteligente
+                    </h2>
+                    <p class="text-lg md:text-xl text-gray-700 mb-6">
+                        Proponemos una plataforma integral que resuelve estos problemas con tecnología de alta precisión, proporcionando datos de negocio accionables.
+                    </p>
+                    <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-blue-500 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                                <div class="ml-3">
+                                    <h3 class="text-xl font-semibold">QUÉ ES</h3>
+                                    <p class="text-gray-600">Una solución unificada de Conteo de Pasajeros de Alta Precisión (APC) y Telemetría (GPS/4G) en tiempo real.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-blue-500 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h6m-6 4h6m-6 4h6m-6-8h6m-6-4h6" /></svg>
+                                <div class="ml-3">
+                                    <h3 class="text-xl font-semibold">FOTO EJECUTIVA (POR BUS)</h3>
+                                    <ul class="list-disc list-outside pl-5 mt-2 space-y-1 text-gray-600">
+                                        <li><strong>Cerebro:</strong> 1x MDVR Vehicular (Dahua GFWI) con <strong>GPS/4G/Wi-Fi integrados</strong>.</li>
+                                        <li><strong>Ascenso (Crítico):</strong> 1x Cámara 3D (Visión Estéreo) con <strong>98-99% de precisión</strong>.</li>
+                                        <li><strong>Descenso:</strong> 1x Cámara 2D de alta gama con <strong>~95% de precisión</strong>.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-blue-500 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                                <div class="ml-3">
+                                    <h3 class="text-xl font-semibold">LA CLAVE</h3>
+                                    <p class="text-gray-600">Datos procesados en el bus y enviados por push seguro (HTTPS 443) a nuestro <strong>backend</strong>, dándonos <strong>propiedad total de los datos</strong>.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: El Valor de Negocio -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">El Valor</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        3. El Valor de Negocio: De "Contar" a "Gestionar"
+                    </h2>
+                    <p class="text-xl text-gray-700 mb-10">Esta no es una actualización de hardware; es una actualización de <strong>inteligencia</strong>.</p>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Card 1 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                            <h3 class="text-2xl font-bold text-blue-700 mb-3">Para Finanzas (ROI)</h3>
+                            <ul class="list-disc list-outside space-y-2 text-gray-600 pl-5">
+                                <li><strong>Revenue Assurance:</strong> Cuadratura de abordajes (99% precisión) vs. boletos o subsidios.</li>
+                                <li><strong>Eliminación de Costos:</strong> Adiós a auditorías manuales y renta de GPS externo.</li>
+                            </ul>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                            <h3 class="text-2xl font-bold text-blue-700 mb-3">Para Operaciones (Eficiencia)</h3>
+                            <ul class="list-disc list-outside space-y-2 text-gray-600 pl-5">
+                                <li><strong>Optimización de Headways:</strong> Datos reales de demanda por hora y ruta.</li>
+                                <li><strong>Despacho Dinámico:</strong> Enviar refuerzos solo cuando la métrica `inside` lo indique.</li>
+                                <li><strong>Reducción de Dwell Time:</strong> Flujo de pasajeros libre, sin frenos (ahorro 8-15s por parada).</li>
+                            </ul>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                            <h3 class="text-2xl font-bold text-blue-700 mb-3">Para el Pasajero (Valor)</h3>
+                            <ul class="list-disc list-outside space-y-2 text-gray-600 pl-5">
+                                <li><strong>Información en Tiempo Real:</strong> Permite crear una App con ETAs precisos.</li>
+                                <li><strong>Nivel de Ocupación:</strong> Decirle al usuario "Bus Próximo: Lleno" o "Bus Próximo: 50%".</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Benchmark Financiero -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Finanzas</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        4. Benchmark Financiero: ¿Por qué NO usar Barras IR?
+                    </h2>
+                    <p class="text-xl text-gray-700 mb-6">La alternativa (Barras IR) no solo es tecnológicamente inferior, sino que su "ahorro" es una ilusión.</p>
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Criterio</th>
+                                    <th>Opción A: Barras IR (Status Quo)</th>
+                                    <th>Opción B: Plataforma 3D+2D (Propuesta)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-semibold">CAPEX (Por Bus)</td>
+                                    <td class="font-bold text-red-600 text-lg">\$22,100 MXN</td>
+                                    <td class="font-bold text-blue-600 text-lg">\$26,015.60 MXN</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="pl-12 text-gray-600">$17,000 (Barras)</td>
+                                    <td class="pl-12 text-gray-600" rowspan="3">$26,015.60 (Kit Híbrido 3D+2D)</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="pl-12 text-gray-600">$3,000 (Inst. Barras)</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="pl-12 text-gray-600">$2,100 (Inst. GPS Externo)</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">OPEX (Mensual/Bus)</td>
+                                    <td class="font-bold text-gray-700 text-lg">\$180 MXN (Renta GPS)</td>
+                                    <td class="font-bold text-gray-700 text-lg">\~\$185 MXN (SIM IoT Datos)</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Diferencia CAPEX</td>
+                                    <td></td>
+                                    <td class="font-bold text-red-600 text-lg">+ \$3,915.60 MXN</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Diferencia OPEX</td>
+                                    <td></td>
+                                    <td class="font-bold text-red-600 text-lg">~ +$5 MXN / mes (Costo)</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Payback</td>
+                                    <td></td>
+                                    <td class="text-gray-700 font-medium">N/A (El valor no está en el OPEX)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xl text-center font-semibold text-gray-900 mt-8 bg-blue-100 border-l-4 border-blue-500 p-6 rounded-lg">
+                        Conclusión: La inversión inicial es \$3,916 MXN más alta, <br><span class="text-blue-700">pero esos \$3,916 compran todo el valor del proyecto.</span>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Slide 5: Benchmark de Valor -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Valor</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        5. Benchmark de Valor: ¿Qué compran esos \$3,916 MXN?
+                    </h2>
+                    <p class="text-xl text-gray-700 mb-6">Esos \$3,916 son la diferencia entre un "contador tonto" y una "plataforma de inteligencia".</p>
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Funcionalidad</th>
+                                    <th>Barras IR (\$21k)</th>
+                                    <th>Plataforma 3D+2D (\$26k)</th>
+                                    <th>Valor de Negocio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-semibold">Precisión (Pico)</td>
+                                    <td class="text-red-600">Baja (falla con oclusiones)</td>
+                                    <td class="text-green-600 font-semibold">98-99% (Estéreo)</td>
+                                    <td class="font-medium">Revenue Assurance Confiable</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Métrica `inside` (Carga)</td>
+                                    <td class="text-red-600 font-bold">NO</td>
+                                    <td class="text-green-600 font-bold">SÍ (Nativo)</td>
+                                    <td class="font-medium">Optimización de Headways</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Info al Pasajero (Ocup.)</td>
+                                    <td class="text-red-600 font-bold">NO</td>
+                                    <td class="text-green-600 font-bold">SÍ</td>
+                                    <td class="font-medium">Mejor Experiencia de Usuario</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Flujo de Pasajeros</td>
+                                    <td class="text-red-600">Lento (requiere paso ordenado)</td>
+                                    <td class="text-green-600 font-semibold">Flujo Libre</td>
+                                    <td class="font-medium">Menos Dwell Time</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Datos para Analítica</td>
+                                    <td class="text-red-600">Pobre (solo conteo)</td>
+                                    <td class="text-green-600 font-semibold">Rico (In/Out/Inside/GPS)</td>
+                                    <td class="font-medium">Base para BI y Machine Learning</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">GPS Integrado</td>
+                                    <td class="text-red-600 font-bold">NO (Externo)</td>
+                                    <td class="text-green-600 font-bold">SÍ (Unificado)</td>
+                                    <td class="font-medium">Simplicidad / Ecosistema Único</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Benchmark de Mercado -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Mercado</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        6. Benchmark de Mercado: ¿Por qué Dahua?
+                    </h2>
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Marca / Stack</th>
+                                    <th>Costo/Bus (Híbrido 3D+2D)</th>
+                                    <th>Precisión</th>
+                                    <th>Ecosistema</th>
+                                    <th>Notas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-blue-50 border-l-4 border-blue-500">
+                                    <td class="font-bold text-blue-800">Dahua (Propuesta)</td>
+                                    <td class="font-semibold text-blue-800">\$27.5k - $30.3k</td>
+                                    <td class="font-semibold text-blue-800">98-99%</td>
+                                    <td class="font-semibold text-blue-800">Completo (MDVR+Cams+GPS)</td>
+                                    <td class="font-bold text-blue-800">Mejor Costo/Beneficio.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Hikvision</td>
+                                    <td>\$30k - $38k</td>
+                                    <td>98-99%</td>
+                                    <td>Completo</td>
+                                    <td>Alternativa viable, costo similar.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Hanwha / Axis (NDAA)</td>
+                                    <td>\$45k - $80k</td>
+                                    <td>98-99%</td>
+                                    <td>Requiere MDVR 3ros</td>
+                                    <td>CAPEX 60-70% mayor.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Transit 3D (Dilax/Xovis)</td>
+                                    <td>\$70k - $140k</td>
+                                    <td>>99%</td>
+                                    <td>Solo Conteo</td>
+                                    <td>Grado de auditoría, CAPEX 2-4x.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xl text-center font-semibold text-gray-900 mt-8 bg-gray-100 p-6 rounded-lg">
+                        Conclusión: Dahua ofrece el <span class="text-blue-600"><strong>stack completo</strong></span> (MDVR+GPS+Cámaras) con la mejor relación precio-tecnología-precisión del mercado.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Slide 7: La Inversión: CAPEX (Resumen Ejecutivo) -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Inversión</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        7. La Inversión: CAPEX (Flota 20 Buses)
+                    </h2>
+                    <p class="text-xl text-gray-700 mb-6">Basado en el escenario recomendado: <strong>Híbrido (3D+2D) + PoE Opción A</strong>.</p>
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Componente</th>
+                                    <th>Costo Unitario (MXN)</th>
+                                    <th>Flota 20 Buses (MXN)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MDVR, SSD, Materiales</td>
+                                    <td>\$15,553.00</td>
+                                    <td>\$311,060.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Cámara 3D (Ascenso)</td>
+                                    <td>\$7,431.77</td>
+                                    <td>\$148,635.40</td>
+                                </tr>
+                                <tr>
+                                    <td>Cámara 2D (Descenso)</td>
+                                    <td>\$4,569.00</td>
+                                    <td>\$91,380.00</td>
+                                </tr>
+                                <tr>
+                                    <td>PoE Opción A (Switch)</td>
+                                    <td>\$1,462.00</td>
+                                    <td>\$29,240.00</td>
+                                </tr>
+                                <tr class="bg-gray-100">
+                                    <td class="font-semibold">Subtotal por Bus</td>
+                                    <td class="font-bold text-lg">\$29,015.77</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="bg-gray-100">
+                                    <td class="font-semibold">Ahorro (No Instalar GPS)</td>
+                                    <td class="font-bold text-green-600 text-lg">(\$3,000.00)</td>
+                                    <td class="font-bold text-green-600 text-lg">(\$60,000.00)</td>
+                                </tr>
+                                <tr class="bg-blue-50">
+                                    <td class="font-bold text-blue-800 text-lg">CAPEX NETO POR BUS</td>
+                                    <td class="font-extrabold text-blue-800 text-xl">\$26,015.77</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="bg-blue-100">
+                                    <td class="font-bold text-blue-800 text-lg">TOTAL INVERSIÓN (20 Buses)</td>
+                                    <td></td>
+                                    <td class="font-extrabold text-blue-800 text-xl">\$520,315.40 (Sin IVA)</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Infraestructura On-Prem</td>
+                                    <td></td>
+                                    <td class="font-medium">\$88k - $155k (Una vez)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- *** NUEVA SLIDE 7.1 *** -->
+            <!-- Slide 7.1: ANEXO: Desglose de Costos -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Anexo Financiero</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        7.1 Desglose de Costos por Escenario (Por Bus)
+                    </h2>
+                    
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Tabla 1: Costos Fijos por Bus (Neto)</h3>
+                    <div class="overflow-x-auto mb-8">
+                        <table>
+                            <thead>
+                                <tr><th>Componente Fijo</th><th>Costo (MXN)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>MDVR (DHI-MXVR4104-GFWI)</td><td>\$10,483.83</td></tr>
+                                <tr><td>SSD 2TB (Samsung 870 EVO)</td><td>\$3,569.00</td></tr>
+                                <tr><td>Materiales Base de Instalación</td><td>\$1,500.00</td></tr>
+                                <tr class="bg-green-50"><td>Ahorro (No Instalar GPS Externo)</td><td class="font-medium text-green-600">(\$3,000.00)</td></tr>
+                                <tr class="bg-gray-100">
+                                    <td class="font-bold">Subtotal Fijo (Neto)</td>
+                                    <td class="font-bold text-lg">\$12,552.83</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Tabla 2: Costos Variables por Escenario (PoE A)</h3>
+                    <div class="overflow-x-auto mb-8">
+                        <table>
+                            <thead>
+                                <tr><th>Escenario</th><th>Componentes Variables</th><th>Subtotal Variable (MXN)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">A: 2D + 2D</td>
+                                    <td>2x Cámara 2D (\$9,138) + 1x PoE A (\$1,462)</td>
+                                    <td class="font-medium">\$10,600.00</td>
+                                </tr>
+                                <tr class="bg-blue-50">
+                                    <td class="font-bold text-blue-800">B: 3D + 2D (Recomendado)</td>
+                                    <td class="text-blue-800">1x Cámara 3D (\$7,431.77) + 1x Cámara 2D (\$4,569) + 1x PoE A (\$1,462)</td>
+                                    <td class="font-bold text-blue-800 text-lg">\$13,462.77</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">C: 3D + 3D</td>
+                                    <td>2x Cámara 3D (\$14,863.54) + 1x PoE A (\$1,462)</td>
+                                    <td class="font-medium">\$16,325.54</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Tabla 3: Costo Total Neto por Bus (Fijos + Variables)</h3>
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr><th>Escenario</th><th>Cálculo (Fijo + Variable)</th><th>Total Neto por Bus (MXN)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">A: 2D + 2D</td>
+                                    <td>\$12,552.83 + \$10,600.00</td>
+                                    <td class="font-bold text-lg">\$23,152.83</td>
+                                </tr>
+                                <tr class="bg-blue-100">
+                                    <td class="font-extrabold text-blue-800">B: 3D + 2D (Recomendado)</td>
+                                    <td class="font-semibold text-blue-800">\$12,552.83 + \$13,462.77</td>
+                                    <td class="font-extrabold text-blue-800 text-xl">\$26,015.60</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">C: 3D + 3D</td>
+                                    <td>\$12,552.83 + \$16,325.54</td>
+                                    <td class="font-bold text-lg">\$28,878.37</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <!-- *** FIN NUEVA SLIDE 7.1 *** -->
+
+            <!-- Slide 8: La Inversión: OPEX -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Inversión</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        8. La Inversión: OPEX (Flota 20 Buses)
+                    </h2>
+                    <p class="text-xl text-gray-700 mb-6">Comparamos la renta actual del GPS vs. el costo de datos IoT de la nueva plataforma.</p>
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Concepto</th>
+                                    <th>Actual (GPS Externo)</th>
+                                    <th>Propuesta (GPS Integrado)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-semibold">Costo por Bus / Mes</td>
+                                    <td class="text-lg text-gray-700">\$180 MXN <span class="text-sm text-gray-500">(Renta GPS)</span></td>
+                                    <td class="text-lg text-gray-700 font-semibold">\~\$185 MXN <span class="text-sm text-gray-500">(SIM Hologram \~\$10 USD)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Costo Flota 20 / Mes</td>
+                                    <td class="text-lg text-gray-700">\$3,600 MXN</td>
+                                    <td class="text-lg text-gray-700 font-semibold">\~\$3,700 MXN</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Costo Flota 20 / Año</td>
+                                    <td class="text-lg text-gray-700">\$43,200 MXN</td>
+                                    <td class="text-lg text-gray-700 font-semibold">\~\$44,400 MXN</td>
+                                </tr>
+                                <tr class="bg-red-100">
+                                    <td class="font-bold text-red-800 text-lg">DIFERENCIA OPEX ANUAL</td>
+                                    <td></td>
+                                    <td class="font-extrabold text-red-800 text-xl">~ +$1,200 MXN (Costo)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 9: Plan de Implementación -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">El Plan</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        9. Plan de Implementación (Roadmap 12 Semanas)
+                    </h2>
+                    <p class="text-xl text-gray-700 mb-10">Proponemos un despliegue escalonado para asegurar la calidad en cada fase.</p>
+                    
+                    <!-- Roadmap Timeline -->
+                    <div class="space-y-12 relative border-l-2 border-blue-300 ml-6">
+                        <!-- Fase 1 -->
+                        <div class="relative pl-10">
+                            <span class="absolute -left-4 flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-full font-bold">1</span>
+                            <h3 class="text-2xl font-bold text-blue-700">Fase 1 (Semanas 1-2): POC (1 Bus)</h3>
+                            <ul class="list-disc list-outside pl-5 mt-3 space-y-2 text-gray-600 text-lg">
+                                <li>Instalar 1 bus con el <strong>stack</strong> Híbrido (3D+2D).</li>
+                                <li>Calibración IA (Día/Noche).</li>
+                                <li>Validar KPIs: Precisión (vs. conteo manual) y Latencia (<3s).</li>
+                                <li>Validar integración del Agente Push con el <strong>backend</strong>.</li>
+                            </ul>
+                        </div>
+                        <!-- Fase 2 -->
+                        <div class="relative pl-10">
+                            <span class="absolute -left-4 flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-full font-bold">2</span>
+                            <h3 class="text-2xl font-bold text-blue-700">Fase 2 (Semanas 3-4): Despliegue Inicial (5 Buses)</h3>
+                            <ul class="list-disc list-outside pl-5 mt-3 space-y-2 text-gray-600 text-lg">
+                                <li>Instalar 4 buses adicionales.</li>
+                                <li>Validar Mobile Center On-Prem (GPS, Replay).</li>
+                                <li>Ajustar dashboards de operación.</li>
+                            </ul>
+                        </div>
+                        <!-- Fase 3 -->
+                        <div class="relative pl-10">
+                            <span class="absolute -left-4 flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-full font-bold">3</span>
+                            <h3 class="text-2xl font-bold text-blue-700">Fase 3 (Semanas 5-8): Escalamiento (Flota 20 Buses)</h3>
+                            <ul class="list-disc list-outside pl-5 mt-3 space-y-2 text-gray-600 text-lg">
+                                <li>Instalación de los 15 buses restantes.</li>
+                                <li>Capacitación a operadores y equipo de mantenimiento.</li>
+                                <li>Entrega de reportes C-Level.</li>
+                            </ul>
+                        </div>
+                        <!-- Fase 4 -->
+                        <div class="relative pl-10">
+                            <span class="absolute -left-4 flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-full font-bold">4</span>
+                            <h3 class="text-2xl font-bold text-blue-700">Fase 4 (Semanas 9-12): Optimización (Inteligencia)</h3>
+                            <ul class="list-disc list-outside pl-5 mt-3 space-y-2 text-gray-600 text-lg">
+                                <li>Iniciar análisis de datos históricos.</li>
+                                <li>Proponer primeros ajustes de <strong>headways</strong> basados en demanda real.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 10: Riesgos y Mitigaciones -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Riesgos</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        10. Riesgos y Mitigaciones (Ejecutivo)
+                    </h2>
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Riesgo</th>
+                                    <th>Impacto</th>
+                                    <th>Mitigación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-semibold text-red-700">Stock de Cámaras 3D</td>
+                                    <td class="font-medium">Alto (Retraso en Fase 3)</td>
+                                    <td class="text-gray-600">1. Colocar orden de compra de inmediato.<br>2. Alternativa temporal: usar 2D en ascenso o buscar Hikvision.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold text-yellow-700">Consumo de Datos 4G</td>
+                                    <td class="font-medium">Medio (Incremento de OPEX)</td>
+                                    <td class="text-gray-600">1. Usar SIMs en <strong>pool</strong> de datos.<br>2. <strong>Prohibir</strong> uso de video en vivo (solo emergencias).<br>3. Alertas de consumo.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold text-red-700">Licencias Mobile Center</td>
+                                    <td class="font-medium">Alto (Ventana muerta post-trial)</td>
+                                    <td class="text-gray-600">1. Iniciar el trámite del trial <strong>hoy</strong>.<br>2. Enviar el `.zip` de autorización para cotizar la licencia `Device+Event` en paralelo.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+        </div> <!-- Fin Parte 1 -->
+
+
+        <!-- Slide de Transición -->
+        <section class="slide bg-blue-800 text-white" id="parte2">
+            <div class="slide-content text-center">
+                <p class="text-2xl font-light text-blue-200">FIN: PARTE 1 (EJECUTIVA)</p>
+                <h2 class="text-5xl md:text-7xl font-extrabold mt-4">
+                    INICIO: PARTE 2
+                    <br>
+                    (DEEP-DIVE TÉCNICO)
+                </h2>
+            </div>
+        </section>
+
+        <!-- PARTE 2: DEEP-DIVE TÉCNICO -->
+        <div>
+
+            <!-- Slide 11: Arquitectura de Sistema -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Técnico</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        11. Arquitectura de Sistema y Flujo de Datos
+                    </h2>
+                    
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Diagrama Físico (Por Bus)</h3>
+                    <pre class="bg-gray-100 p-4 rounded-lg text-gray-700 mb-6"><code>[Cámara 3D (Ascenso)] ──(PoE)──► [Mini-switch PoE Vehicular] ──(Uplink)──► [MDVR DHI-MXVR4104-GFWI]
+[Cámara 2D (Descenso)] ──(PoE)──► [Mini-switch PoE Vehicular]</code></pre>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Flujo de Datos (Lógico)</h3>
+                    <ol class="list-decimal list-outside pl-5 space-y-3 text-lg text-gray-700 mb-6">
+                        <li><strong>Conteo (Push):</strong> Cámaras → `Agente Push` (consume CGI `attach`) → Buffer (SQLite) → `HTTPS 443 (Saliente)` → `[Tu API/Backend (Conteo)]`.</li>
+                        <li><strong>GPS (Push):</strong> MDVR (Módulo GNSS) → `Protocolo JT808 (0x0200)` → `[Tu API/Backend (GPS Listener)]`.</li>
+                        <li><strong>Gestión (Opcional):</strong> MDVR → `(LAN/VPN Taller)` → `[Mobile Center On-Prem]`.</li>
+                    </ol>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Pilar de Seguridad</h3>
+                    <div class="bg-red-100 border-l-4 border-red-500 text-red-800 p-6 rounded-lg">
+                        <ul class="list-disc list-outside pl-5 space-y-2 font-medium">
+                            <li><strong>CERO PUERTOS ABIERTOS EN EL BUS.</strong></li>
+                            <li>El MDVR y las cámaras NUNCA deben estar expuestos a Internet.</li>
+                            <li>Toda la comunicación es <strong>saliente</strong> (push) por HTTPS 443 (Conteo) o JT808 (GPS).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 12: Hardware: Bill of Materials (BOM) -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Técnico</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        12. Hardware: Bill of Materials (BOM) Específico
+                    </h2>
+                    <p class="text-xl text-gray-700 mb-6">Componentes obligatorios para la Orden de Compra (OC).</p>
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Partida</th>
+                                    <th>Modelo / Especificación</th>
+                                    <th>Notas Clave</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-semibold">MDVR</td>
+                                    <td><code>DHI-MXVR4104-GFWI</code></td>
+                                    <td class="font-bold text-red-600">¡Sub-modelo GFWI es obligatorio! (4G/Wi-Fi/GNSS). Antenas incluidas.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Cámara 3D (Ascenso)</td>
+                                    <td><code>DH-IPC-HDW8441X-BV-3D</code></td>
+                                    <td class="font-bold text-red-600">¡Lente 2.0 mm es obligatorio! (Para umbral ancho y cercano).</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Cámara 2D (Descenso)</td>
+                                    <td><code>DH-IPC-HDW5442TM-ASE S3</code></td>
+                                    <td>Lente 2.8mm es estándar.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">PoE (Opción A)</td>
+                                    <td><code>Mini-switch PoE vehicular 12/24V → 48V (≥60W)</code></td>
+                                    <td>Menos piezas, más robusto.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">PoE (Opción B)</td>
+                                    <td><code>2x Inyector Tycon TP-DCDC-1248GD-HP</code> + Switch No-PoE</td>
+                                    <td>Más piezas, más puntos de falla.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Almacenamiento</td>
+                                    <td><code>SSD 2.5″ 2 TB</code></td>
+                                    <td>(Ej. Samsung 870 EVO). No usar HDD.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Conectividad</td>
+                                    <td><code>SIM M2M (Hologram, etc.)</code></td>
+                                    <td>Plan PAYG, 100-300MB/mes.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Materiales</td>
+                                    <td>Cable Cat6, canaleta, fusibles, relé 12V para DI.</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 13: Integración de Datos (1/2) -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Técnico</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        13. Integración de Datos (1/2): Agente Push y Conteo
+                    </h2>
+                    <p class="text-xl text-gray-700 mb-6">El "Agente Push" es la pieza de software (desarrollo propio) que corre en el bus y es responsable de la comunicación segura.</p>
+                    <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-blue-700 mb-6">Funciones del Agente</h3>
+                        <ol class="list-decimal list-outside pl-5 space-y-4 text-lg text-gray-700">
+                            <li>
+                                <strong>Suscribirse:</strong> Conectarse vía HTTP a la cámara (IP local) usando el <strong>endpoint</strong> de <strong>long-polling</strong>:
+                                <pre class="bg-gray-100 p-3 rounded-md mt-2 text-sm text-gray-800"><code>GET /cgi-bin/videoStatServer.cgi?action=attach&channel=1&heartbeat=5</code></pre>
+                                <span class="text-sm text-red-600 font-medium"><strong>(No usar `getSummary`)</strong></span>
+                            </li>
+                            <li><strong>Parsear:</strong> Interpretar la respuesta (XML o JSON) para extraer `in`, `out` e `inside`.</li>
+                            <li><strong>Enriquecer:</strong> Añadir metadata (bus_id, route_id, door_id, timestamp).</li>
+                            <li><strong>Bufferizar:</strong> Guardar eventos en una cola local (SQLite) por si falla el 4G.</li>
+                            <li><strong>Enviar:</strong> Hacer un `POST` HTTPS 443 al <strong>backend</strong> con el evento.</li>
+                            <li><strong>Idempotencia:</strong> Generar un `event_id` único (hash) para que el <strong>backend</strong> pueda descartar duplicados.</li>
+                            <li><strong>Reintentos:</strong> Usar <strong>backoff</strong> exponencial para reenviar eventos fallidos desde la cola.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 14: Integración de Datos (2/2) -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Técnico</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        14. Integración de Datos (2/2): Payload JSON y GPS
+                    </h2>
+                    
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Esquema JSON de Evento (Recomendado)</h3>
+                    <p class="text-lg text-gray-700 mb-4">Este es el <strong>payload</strong> que tu Agente Push debería enviar a tu API.</p>
+                    <pre class="bg-gray-900 text-white p-6 rounded-lg overflow-x-auto mb-8"><code>{
+  "device_sn": "DH-3D-ASC-001",
+  "bus_id": "BUS-027",
+  "route_id": "RT-12",
+  "door_id": 1,
+  "ts": "2025-11-08T10:32:41-06:00",
+  "in": 3,
+  "out": 1,
+  "inside": 24,
+  "rule_id": "ASC_UMBRAL",
+  "event_id": "hash(sn|ts|door|in|out)"
+}</code></pre>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Protocolo GPS (JT808)</h3>
+                    <ul class="list-disc list-outside pl-5 space-y-3 text-lg text-gray-700">
+                        <li>El MDVR GFWI soporta nativamente el protocolo JT808 (estándar de telemetría).</li>
+                        <li>Se configura en el MDVR para apuntar a la IP/Puerto de tu <strong>listener</strong> de telemetría.</li>
+                        <li>El mensaje principal es <code>0x0200</code> (Location Information Report).</li>
+                        <li>Esto es más eficiente y directo que usar Mobile Center como intermediario.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 15: Gestión de Flota -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Técnico</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        15. Gestión de Flota: Mobile Center (On-Prem)
+                    </h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 text-lg">
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                            <h3 class="text-2xl font-bold text-blue-700 mb-4">Rol de la Plataforma</h3>
+                            <ul class="list-disc list-outside pl-5 space-y-2 text-gray-700">
+                                <li class="font-semibold">Plataforma de <strong>Operaciones</strong> (para el despachador), NO de <strong>Analítica</strong> (esa es la tuya).</li>
+                                <li>GPS en vivo (Mapa).</li>
+                                <li>Replay de rutas.</li>
+                                <li>Geocercas (E-fence).</li>
+                                <li><strong>Reporte "Passenger Flow Trend"</strong> (Reporte básico de conteo).</li>
+                                <li>Acceso a video en vivo (solo emergencias).</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                            <h3 class="text-2xl font-bold text-blue-700 mb-4">Licenciamiento y Activación</h3>
+                            <ul class="list-disc list-outside pl-5 space-y-2 text-gray-700">
+                                <li>El Trial dura 90 días.</li>
+                                <li class="font-semibold">Licencia de Producción: <strong>Device + Event</strong>.</li>
+                                <li><strong>NO</strong> se necesita `Storage` (grabamos en el bus) ni `TV Wall`.</li>
+                                <li>Pedir canales de video mínimos (0-16).</li>
+                                <li class="font-semibold mt-2">Activación:</li>
+                                <ol class="list-decimal list-outside pl-6 space-y-1 text-gray-600">
+                                    <li>Instalar en servidor Windows.</li>
+                                    <li>`Manager Home` → `License` → `Upgrade`.</li>
+                                    <li>Exportar el archivo `.zip`.</li>
+                                    <li>Enviar `.zip` al partner de Dahua MX.</li>
+                                </ol>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 16: Implementación: Calibración IA -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Técnico</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        16. Implementación: Calibración IA (Crítica)
+                    </h2>
+                    <p class="text-xl text-gray-700 mb-6">Una mala calibración invalida toda la inversión. Esto toma 5-10 minutos por puerta.</p>
+                    
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Pasos (Vía Web UI o SmartPSS)</h3>
+                    <ol class="list-decimal list-outside pl-5 space-y-4 text-lg text-gray-700">
+                        <li><strong>Activar Plan:</strong> <code>AI</code> → <code>Smart Plan</code> → <code>People Counting</code> → <strong>ON</strong>.</li>
+                        <li>
+                            <strong>Configurar Regla:</strong> <code>People Counting</code>
+                            <ul class="list-disc list-outside pl-6 mt-2 space-y-1 text-gray-600">
+                                <li>Trazar la línea IN/OUT <strong>exactamente</strong> en el umbral de la puerta.</li>
+                                <li>Realizar 10-20 cruces de prueba (día y noche) para validar.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Ajustes de Video (Noche):</strong>
+                            <ul class="list-disc list-outside pl-6 mt-2 space-y-1 text-gray-600">
+                                <li><strong>Smart IR:</strong> Poner en `Bajo` o `Off` (si la luz interior es suficiente).</li>
+                                <li><strong>WDR:</strong> `ON` (120dB).</li>
+                                <li><strong>Anti-Flicker:</strong> `60 Hz` (para LATAM).</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Ajustes 3D (Cámara 8441X-BV-3D):</strong>
+                            <ul class="list-disc list-outside pl-6 mt-2 space-y-1 text-gray-600">
+                                <li>Asegurar que la altura de montaje (Ej. 2.4m) esté configurada correctamente.</li>
+                                <li>Asegurar que el lente sea 2.0 mm (viene de fábrica).</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Slide 17: Implementación: KPIs y SLOs -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Técnico</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        17. Implementación: KPIs y SLOs (Técnicos)
+                    </h2>
+                    <p class="text-xl text-gray-700 mb-6">Estas son las métricas de aceptación del sistema.</p>
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Métrica</th>
+                                    <th>SLO Target</th>
+                                    <th>Medición</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-semibold">Exactitud (Ascenso 3D)</td>
+                                    <td class="font-bold text-green-600 text-lg">≥ 98-99%</td>
+                                    <td>Validación manual (100 cruces)</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Exactitud (Descenso 2D)</td>
+                                    <td class="font-bold text-green-600 text-lg">≥ 95%</td>
+                                    <td>Validación manual (100 cruces)</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Latencia Evento → API</td>
+                                    <td class="font-bold text-green-600 text-lg">≤ 3 segundos (promedio)</td>
+                                    <td>Timestamp (Cámara) vs. Timestamp (Ingesta API)</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Uptime Datos (Por Bus)</td>
+                                    <td class="font-bold text-green-600 text-lg">≥ 98% / mes</td>
+                                    <td>% de tiempo que el bus reporta datos</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">Consumo Datos (Sin Video)</td>
+                                    <td class="font-bold text-green-600 text-lg">≤ 300 MB / mes / bus</td>
+                                    <td>Monitoreo en plataforma 4G (Hologram)</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">MTTR (Falla Hw/Sw)</td>
+                                    <td class="font-bold text-green-600 text-lg">< 24 horas</td>
+                                    <td>Tiempo desde reporte de falla hasta resolución</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 18: Anexo A: Plantilla de OC -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Anexos</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        18. Anexo A: Plantilla de Orden de Compra (OC)
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-6"><strong>Para: [Proveedor Dahua]</strong></p>
+                    
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Conceptos por cada Bus (Total 20 Unidades)</h3>
+                    <div class="overflow-x-auto mb-8">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cant.</th>
+                                    <th>Modelo / Sub-Modelo</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><code>DHI-MXVR4104-GFWI</code></td>
+                                    <td class="font-bold text-red-600">Sub-modelo GFWI (4G/Wi-Fi/GNSS) OBLIGATORIO. Incluir antenas.</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><code>DH-IPC-HDW8441X-BV-3D</code></td>
+                                    <td class="font-bold text-red-600">Cámara Conteo 3D. Lente 2.0 mm OBLIGATORIO.</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><code>DH-IPC-HDW5442TM-ASE S3</code></td>
+                                    <td>Cámara Conteo 2D (4MP).</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><code>[PoE-SWITCH-MODELO]</code></td>
+                                    <td>Mini-switch PoE vehicular 12/24V→48V, 5p, ≥60W. (Opción A).</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><code>[SSD-MODELO]</code></td>
+                                    <td>SSD 2.5″ 2 TB (Grado Mínimo: Samsung 870 EVO).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Conceptos de Servidor (Total 1 Unidad)</h3>
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cant.</th>
+                                    <th>Modelo / Sub-Modelo</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><code>DHI-MPS-0200-L</code></td>
+                                    <td>Licencia Mobile Center (On-Prem): Módulos <strong>Device + Event</strong>. Canales de video: 16.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 19: Anexo B: Checklist de Instalación -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Anexos</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        19. Anexo B: Checklist de Instalación (Por Bus)
+                    </h2>
+                    <div class="grid md:grid-cols-3 gap-8 text-lg">
+                        <!-- Checklist 1 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                            <h3 class="text-2xl font-bold text-blue-700 mb-4">1. Montaje Físico</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><span class="mr-2">☐</span> Cámara 3D montada (Ascenso).</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Cámara 2D montada (Descenso).</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Mini-switch PoE instalado.</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> MDVR instalado y asegurado.</li>
+                            </ul>
+                        </div>
+                        <!-- Checklist 2 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                            <h3 class="text-2xl font-bold text-blue-700 mb-4">2. Cableado</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><span class="mr-2">☐</span> Cableado Cat6 (Cámaras → Switch PoE).</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Cableado Cat6 (Switch PoE Uplink → MDVR).</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Conexión a ACC (Ignición) + Fusible.</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Conexión DI1 (Input Digital) a puerta delantera.</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Conexión DI2 (Input Digital) a puerta trasera.</li>
+                            </ul>
+                        </div>
+                        <!-- Checklist 3 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                            <h3 class="text-2xl font-bold text-blue-700 mb-4">3. Configuración MDVR</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><span class="mr-2">☐</span> MDVR detecta ambas cámaras IP.</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> SIM 4G insertada y con conexión (LED OK).</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Módulo GNSS con señal (LED OK).</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Configurar grabación H.265 en SSD.</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Configurar JT808 apuntando a IP/Puerto del <strong>backend</strong>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 20: Anexo C: Checklist de Aceptación -->
+            <section class="slide">
+                <div class="slide-content">
+                    <span class="text-sm font-semibold text-blue-600 uppercase">Anexos</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-8">
+                        20. Anexo C: Checklist de Aceptación (Go-Live)
+                    </h2>
+                    <div class="grid md:grid-cols-3 gap-8 text-lg">
+                        <!-- Checklist 1 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                            <h3 class="text-2xl font-bold text-blue-700 mb-4">1. Validación (Mobile Center)</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><span class="mr-2">☐</span> Bus aparece en el mapa (GPS en vivo OK).</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Replay de ruta de 1 hora es coherente.</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Reporte "Passenger Flow Trend" muestra datos.</li>
+                            </ul>
+                        </div>
+                        <!-- Checklist 2 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                            <h3 class="text-2xl font-bold text-blue-700 mb-4">2. Validación (Tu API)</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><span class="mr-2">☐</span> Eventos de conteo (JSON) llegando (Latencia < 3s).</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Eventos de GPS (JT808) llegando al <strong>listener</strong>.</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Simular corte 4G y verificar cola en Agente Push.</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Restaurar 4G y verificar vaciado de cola.</li>
+                            </ul>
+                        </div>
+                        <!-- Checklist 3 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                            <h3 class="text-2xl font-bold text-blue-700 mb-4">3. Validación (Hardware)</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><span class="mr-2">☐</span> Señales DI1 y DI2 se registran al abrir/cerrar.</li>
+                                <li class="flex items-center"><span class="mr-2">☐</span> Consumo de datos < 10MB en 1 hora (sin video).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div> <!-- Fin Parte 2 -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Plataforma de Movilidad. Propuesta Confidencial.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
